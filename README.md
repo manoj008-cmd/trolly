@@ -395,3 +395,10 @@ http://localhost:5173
 **Technology Stack:** React + Spring Boot + MongoDB
 
 **Type:** Full Stack Web Application
+## Live Demo
+
+Frontend:
+https://trolly-git-main-manoj-kumars-projects-d17c0678.vercel.app
+
+Backend API:
+https://toll-management-backend-production.up.railway.app/api/transactions
