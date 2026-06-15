@@ -33,7 +33,7 @@ export default function AddTransaction() {
         dateTime: new Date().toLocaleString(),
         amount: getTollAmount(),
       };
-
+      console.log("API URL:", import.meta.env.VITE_API_URL);
      await API.post("/transactions", transaction);
 
 navigate("/receipt", {
@@ -43,9 +43,19 @@ navigate("/receipt", {
       setVehicleType("Car");
       setTollPlaza("Bangalore Toll");
     } catch (error) {
-      console.error(error);
-      alert("Failed to save transaction");
-    }
+  console.log("ERROR OBJECT:", error);
+
+  if (error.response) {
+    console.log("STATUS:", error.response.status);
+    console.log("DATA:", error.response.data);
+  }
+
+  if (error.request) {
+    console.log("REQUEST:", error.request);
+  }
+
+  alert("Failed to save transaction");
+}
   };
 
   return (
